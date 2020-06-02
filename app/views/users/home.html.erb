@@ -1,1 +1,28 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+  </head>
+  <body>
+    <div class="main-div">
+      <a href="/">
+        <!-- <img class="logo" border="0"  src="/images/Medivation_Logo.png" width="250" height="250"> -->
+      </a>
+      <div class="welcome">WELCOME TO <b>REFLECTIONS</b></div>
+      <div class="main-welcome">
+        <p>
+        Giving you the oppurtunity to write down your <i>reflective</i> insights into the most wonderful and inspiring books.
+        <br></br>
+        <em>"Let your words be the mirror to your mind."</em>
+        </p>
+      </div>
+
+        <%= button_to "Log In", login_path %>
+        <br></br>
+        <%= button_to "Sign Up", new_user_path %>
+
+   </div>
+  </body>
+</html>
