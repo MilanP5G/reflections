@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @user = User.find_by(id: params[:id])
   end
 
   def new
@@ -18,6 +19,9 @@ class UsersController < ApplicationController
       redirect_to users_path
     end
     "redirect_to(new_user_path) and return"
+  end
+
+  def show
   end
 
   private
