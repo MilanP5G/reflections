@@ -16,12 +16,13 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to users_path
+      redirect_to user_path(@user)
     end
     "redirect_to(new_user_path) and return"
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   private
