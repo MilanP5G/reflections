@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
   private
 
-  def reflection_params
+  def book_params
     params.require(:book).permit(:title, :author, :image)
   end
 
