@@ -11,7 +11,7 @@
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "BOOK", new_book_path %>
-        <%= link_to "PROFILE", user_path(:user_id) %>
+        <%= link_to "PROFILE", user_path(current_user.id) %>
         <%= link_to "ACCOUNT SETTINGS" %>
       </div>
     </div>
