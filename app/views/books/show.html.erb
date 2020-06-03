@@ -22,7 +22,7 @@
       <%= @book.author %>
       <br>
       <% if @book.image.attached? %>
-        <img src="<%(url_for(@book.image))%>">
+        <img src="<%=(url_for(@book.image))%>">
       <% end %>
 
         </div>
