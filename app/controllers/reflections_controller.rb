@@ -7,11 +7,9 @@ class ReflectionsController < ApplicationController
 
   def create
     @reflection = Reflection.create(reflection_params)
-    if @reflection.save
-      redirect_to reflection_path(@reflection.book)
-    else
-      redirect_to new_reflection_path
-    end
+    @reflection.reflection_user = current_user
+    @reflection.save
+    redirect_to book_path(@reflection.reflection_user)
   end
 
   private
