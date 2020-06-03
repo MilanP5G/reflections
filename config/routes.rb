@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  resources :books do
+    resources :reflections
+  end 
+
   resources :users
   resources :books
   resources :reflections

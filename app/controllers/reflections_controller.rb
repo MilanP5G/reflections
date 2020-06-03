@@ -1,7 +1,8 @@
 class ReflectionsController < ApplicationController
 
   def new
-    @reflection = Reflection.new
+    @book = Book.find(params[:book_id])
+    @reflection = @book.reflections.build
   end
 
   def create
