@@ -11,9 +11,12 @@ class ReflectionsController < ApplicationController
     else
       redirect_to new_reflection_path
     end
-  end 
+  end
 
+  private
 
-
+  def reflection_params
+    params.require(:reflection).permit(:title, :content)
+  end
 
 end

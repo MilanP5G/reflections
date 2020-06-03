@@ -11,8 +11,12 @@ class BooksController < ApplicationController
     else
       redirect_to new_book_path
     end
-  end 
+  end
 
+  private
 
+  def reflection_params
+    params.require(:book).permit(:title, :author, :image)
+  end
 
 end
