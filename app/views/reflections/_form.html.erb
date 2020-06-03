@@ -1,0 +1,11 @@
+<%= form_for @reflection do | f | %>
+
+  <%= f.label :title, "Reflection Title:" %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content, placeholder: "Free your reflection here..." %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "Submit Reflection" %>
+
+<% end %>
