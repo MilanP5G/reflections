@@ -17,13 +17,7 @@
     </div>
     <div class="home-div">
 
-      <%= @book.title %>
-      <br>
-      <%= @book.author %>
-      <br>
-      <% if @book.image.attached? %>
-        <img src="<%=(url_for(@book.image))%>">
-      <% end %>
+      <%= @reflection.title %>
 
 
 

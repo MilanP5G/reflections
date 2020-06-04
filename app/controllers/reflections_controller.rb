@@ -12,6 +12,11 @@ class ReflectionsController < ApplicationController
     redirect_to book_path(@reflection.reflection_user)
   end
 
+  def show
+    @reflection = Reflection.find(params[:id])
+    @book = @reflection.reflection_book
+  end
+
   private
 
   def reflection_params
