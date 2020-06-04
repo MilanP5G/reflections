@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/books.css">
   </head>
   <body>
     <div class="header">
@@ -22,7 +22,9 @@
       <%= @book.author %>
       <br>
       <% if @book.image.attached? %>
+      <div class="bookcover">
         <img src="<%=(url_for(@book.image))%>">
+      </div>
       <% end %>
       <br>
 
