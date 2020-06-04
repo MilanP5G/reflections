@@ -1,4 +1,5 @@
 class ReflectionsController < ApplicationController
+  before_action :require_login
 
   def new
     @book = Book.find_by(id: params[:book_id])
@@ -9,7 +10,7 @@ class ReflectionsController < ApplicationController
     @reflection = Reflection.new(reflection_params)
     @reflection.reflection_user = current_user
     @reflection.save
-    redirect_to reflection_path(@reflection.reflection_book)
+    redirect_to book_reflection_path(@reflection.reflection_book, @reflection)
   end
 
   def show
@@ -20,7 +21,7 @@ class ReflectionsController < ApplicationController
   private
 
   def reflection_params
-    params.require(:reflection).permit(:title, :content)
+    params.require(:reflection).permit(:title, :content, :reflection_book_id)
   end
 
 end

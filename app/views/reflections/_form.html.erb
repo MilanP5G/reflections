@@ -1,4 +1,5 @@
 <%= form_for @reflection do | f | %>
+  <%= f.hidden_field :reflection_book_id %>
 
   <%= f.label :title, "Reflection Title:" %>
   <%= f.text_field :title %>

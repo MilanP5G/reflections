@@ -21,11 +21,11 @@
       <br>
       <% @books.each do | book | %>
       <br>
-        <%= book.title %>
+        <%= link_to book.title, book_path(book) %>
         <br>
         <%= book.author %>
         <br>
-        <img src="<%=(url_for(book.image))%>"
+        <img src="<%=(url_for(book.image))%>">
         <br>
         <br>
         <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(book) %></button>

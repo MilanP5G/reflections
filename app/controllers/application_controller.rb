@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    return redirect_to "/" unless current_user
+    return redirect_to root_path unless current_user
   end
 
 
