@@ -6,10 +6,10 @@ class ReflectionsController < ApplicationController
   end
 
   def create
-    @reflection = Reflection.create(reflection_params)
+    @reflection = Reflection.new(reflection_params)
     @reflection.reflection_user = current_user
     @reflection.save
-    redirect_to book_path(@reflection.reflection_user)
+    redirect_to reflection_path(@reflection.reflection_book)
   end
 
   def show

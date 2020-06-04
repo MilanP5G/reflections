@@ -27,7 +27,8 @@
         <br>
         <img src="<%=(url_for(book.image))%>"
         <br>
-        <%= button_to "Write a reflection", new_book_reflection_path(book)%>
+        <br>
+        <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(book) %></button>
       <% end %>
 
 

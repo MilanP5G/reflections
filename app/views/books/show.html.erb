@@ -24,6 +24,8 @@
       <% if @book.image.attached? %>
         <img src="<%=(url_for(@book.image))%>">
       <% end %>
+      <br>
+      <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(@book) %></button>
 
 
 
