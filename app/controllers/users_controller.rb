@@ -39,18 +39,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    if current_user.update user_params
-        redirect_to "/account_settings"
+    @user = current_user
+      if @user.update_attributes(user_params)
+       redirect_to account_settings_path(@user.id)
       else
-        render :edit
+       render :edit
       end
   end
-
-
 
   private
 

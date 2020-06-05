@@ -8,12 +8,9 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
-  get 'edit' => 'users#edit'
-  post 'edit' => 'users#update'
-
-  get 'users/:id/settings' => 'users#settings', as: :account_settings
+  get '/users/:id/settings' => 'users#settings', as: :account_settings
 
   resources :books do
     resources :reflections

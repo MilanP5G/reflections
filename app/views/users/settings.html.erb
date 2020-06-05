@@ -1,3 +1,27 @@
-<%= link_to "Log out", logout_path, method: :delete %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/books.css">
+  </head>
+  <body>
+    <div class="header">
+      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="header-right">
+        <%= link_to "HOME", users_path %>
+        <%= link_to "ADD BOOK", new_book_path %>
+        <%= link_to "PROFILE", user_path(current_user.id) %>
+        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
+      </div>
+    </div>
+    <div class="home-div">
 
-<%= link_to "Edit Profile", edit_path, method: :edit %>
+      <%= link_to "Log out", logout_path, method: :delete %>
+
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+
+        </div>
+
+      </body>
+    </html>

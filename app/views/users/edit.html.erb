@@ -1,6 +1,30 @@
-<%= form_for :user, url: account_settings_path(current_user.id), action: :update, method: :patch  do | f | %>
-    <%= f.text_field :username %>
-    <%= f.email_field :email %>
-    <%= f.password_field :password %>
-    <%= f.submit "Update Account" %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/books.css">
+  </head>
+  <body>
+    <div class="header">
+      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="header-right">
+        <%= link_to "HOME", users_path %>
+        <%= link_to "ADD BOOK", new_book_path %>
+        <%= link_to "PROFILE", user_path(current_user.id) %>
+        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
+      </div>
+    </div>
+    <div class="home-div">
+
+      <%= form_for @user do | f | %>
+          <%= f.text_field :username %>
+          <%= f.email_field :email %>
+          <%= f.password_field :password %>
+          <%= f.submit "Update Account" %>
+      <% end %>
+
+        </div>
+
+      </body>
+    </html>
