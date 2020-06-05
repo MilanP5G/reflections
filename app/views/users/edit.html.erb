@@ -1,0 +1,6 @@
+<%= form_for :user, url: account_settings_path(current_user.id), action: :update, method: :patch  do | f | %>
+    <%= f.text_field :username %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.submit "Update Account" %>
+<% end %>
