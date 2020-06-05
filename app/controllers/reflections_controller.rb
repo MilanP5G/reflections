@@ -16,6 +16,7 @@ class ReflectionsController < ApplicationController
   def show
     @reflection = Reflection.find(params[:id])
     @book = @reflection.reflection_book
+    @today = Reflection.today
   end
 
   private

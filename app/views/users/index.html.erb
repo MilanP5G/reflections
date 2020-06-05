@@ -18,10 +18,10 @@
     <div class="home-div">
 
            <% @users.each do | user | %>
-             <%= user.username %>
+             <%= link_to user.username, user_path(user) %>
            <% end %>
 
         </div>
-       </div>
+
       </body>
     </html>
