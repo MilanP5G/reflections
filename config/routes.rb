@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  post 'reflection/create'
+  get 'users/:id/settings' => 'users#settings', as: :account_settings
 
   resources :books do
     resources :reflections

@@ -34,6 +34,10 @@ class UsersController < ApplicationController
     @books = @user.owned_books
   end
 
+  def settings
+    
+  end
+
   private
 
   def user_params
