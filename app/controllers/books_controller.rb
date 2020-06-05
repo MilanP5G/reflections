@@ -6,7 +6,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @book.reflections.build
   end
 
   def create

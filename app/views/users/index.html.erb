@@ -19,6 +19,11 @@
 
            <% @users.each do | user | %>
              <%= link_to user.username, user_path(user) %>
+             <br>
+             <% user.owned_books.each do | b | %>
+               <%= b.title %>
+               <br>
+               <% end %>
            <% end %>
 
         </div>

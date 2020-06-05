@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create, :home]
 
   def home
+    if session[:user_id]
+      redirect_to users_path
+    end
   end
 
   def index
@@ -10,7 +13,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if !session[:user_id]
+      @user = User.new
+    else
+      redirect_to users_path(@user)
+    end
   end
 
   def create

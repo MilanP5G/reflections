@@ -1,5 +1,12 @@
 <%= form_for @user do | f | %>
 
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do | msg | %>
+   <%= msg %>
+   <br>
+  <% end %>
+<% end %>
+
   <%= f.label :username, "Username:" %>
   <%= f.text_field :username %>
 

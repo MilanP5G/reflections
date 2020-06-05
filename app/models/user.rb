@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: { message: "This username already exists. Please try another."}
   validates :email, presence: true, uniqueness: { message: "This email has already been taken. Please try another."}
   validates :password, presence: true, length: { :within => 8..40 }
+  # scope :recent, ->{ group(:books).limit(3).order("created_at DESC") }
   has_secure_password
 
 
