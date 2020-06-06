@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     end
-    render :new
+    "redirect_to(new_user_path) and return"
   end
 
   def show
