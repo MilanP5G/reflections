@@ -25,6 +25,9 @@
       <div class="bookcover">
         <img src="<%=(url_for(@book.image))%>">
       </div>
+        <% if @book.owner_user == current_user %>
+          <button class="ebbutton"><%= link_to "Edit Book", edit_book_path(@book) %></button>
+        <% end %>
       <% end %>
       <br>
 
