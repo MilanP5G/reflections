@@ -28,8 +28,8 @@
         <img src="<%=(url_for(book.image))%>">
         <br>
         <br>
-        <% if !session[:user_id] %>
-        <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(book) %></button>
+        <% if book.owner_user == current_user %>
+          <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(book) %></button>
         <% end %>
       <% end %>
 

@@ -3,7 +3,11 @@ class ReflectionsController < ApplicationController
 
   def new
     @book = Book.find_by(id: params[:book_id])
-    @reflection = @book.reflections.build
+    if current_user == @book.owner_user
+      @reflection = @book.reflections.build
+    else
+      redirect_to users_path(current_user)
+    end
   end
 
   def create
@@ -16,7 +20,6 @@ class ReflectionsController < ApplicationController
   def show
     @reflection = Reflection.find(params[:id])
     @book = @reflection.reflection_book
-    @today = Reflection.today
   end
 
   private
