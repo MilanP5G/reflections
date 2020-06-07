@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { :within => 8..40 }
   has_secure_password
 
+  # joins(:owned_books).order("created_at DESC").where("owned_books > 1")
+
 
 end
