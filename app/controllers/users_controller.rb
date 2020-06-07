@@ -8,9 +8,11 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user_r = User.with_reflections
     @users = User.all
     @user = User.find_by(id: params[:id])
   end
+
 
   def new
     if !session[:user_id]

@@ -17,6 +17,15 @@
     </div>
     <div class="home-div">
 
+
+      <% @user_r.each do | user | %>
+        <%= user.username %>
+      <% end %>
+        <br>
+        <br>
+
+
+
            <% @users.each do | user | %>
              <%= link_to user.username, user_path(user) %>
              <br>

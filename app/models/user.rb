@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: { message: "This username already exists. Please try another."}
   validates :email, presence: true, uniqueness: { message: "This email has already been taken. Please try another."}
   validates :password, presence: true, length: { :within => 8..40 }
+  scope :with_reflections, ->{ joins(:reflections).where("reflection_book_id >= ?", 5) }
   has_secure_password
 
-  # joins(:owned_books).order("created_at DESC").where("owned_books > 1")
+
 
 
 end
