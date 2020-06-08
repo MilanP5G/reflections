@@ -2,7 +2,7 @@ class ReflectionsController < ApplicationController
   before_action :require_login
 
   def new
-    @book = Book.find_by(id: params[:book_id])
+    @book = Book.find(params[:book_id])
     if current_user == @book.owner_user
       @reflection = @book.reflections.build
     else
@@ -16,6 +16,7 @@ class ReflectionsController < ApplicationController
     if @reflection.save
       redirect_to book_reflection_path(@reflection.reflection_book, @reflection)
     else
+      @book = @reflection.reflection_book
       render :new
     end
   end
@@ -28,7 +29,7 @@ class ReflectionsController < ApplicationController
   private
 
   def reflection_params
-    params.require(:reflection).permit(:title, :content, :reflection_book_id, :book_id)
+    params.require(:reflection).permit(:title, :content, :reflection_book_id)
   end
 
 end
