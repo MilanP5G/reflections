@@ -8,8 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user_r = User.with_reflections
-    @users = User.all
+    @users = User.with_reflections
     @user = User.find_by(id: params[:id])
   end
 
