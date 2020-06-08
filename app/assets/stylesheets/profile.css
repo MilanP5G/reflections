@@ -64,12 +64,9 @@ body {
  line-height: 1.1em;
  display: inline-block;
 }
-.home-div {
-  vertical-align: middle;
- line-height: 1.1em;
- display: inline-block;
-}
-%transition_all_03s {
+
+
+/* %transition_all_03s {
   transition:all .3s ease;
 }
 %backface_visibility_hidden{
@@ -201,4 +198,4 @@ body {
       padding-top:0;
     }
   }
-}
+} */

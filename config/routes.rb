@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/settings' => 'users#settings', as: :account_settings
 
+  get '/auth/facebook/callback' => 'sessions#facebook_callback'
+
 
   resources :books do
     resources :reflections, only: [:new, :show]
