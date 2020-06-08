@@ -11,10 +11,13 @@ class ReflectionsController < ApplicationController
   end
 
   def create
-    @reflection = Reflection.new(reflection_params)
+    @reflection = Reflection.create(reflection_params)
     @reflection.reflection_user = current_user
-    @reflection.save
-    redirect_to book_reflection_path(@reflection.reflection_book, @reflection)
+    if @reflection.save
+      redirect_to book_reflection_path(@reflection.reflection_book, @reflection)
+    else
+      render :new
+    end
   end
 
   def show
@@ -25,7 +28,7 @@ class ReflectionsController < ApplicationController
   private
 
   def reflection_params
-    params.require(:reflection).permit(:title, :content, :reflection_book_id)
+    params.require(:reflection).permit(:title, :content, :reflection_book_id, :book_id)
   end
 
 end

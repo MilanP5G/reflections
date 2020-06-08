@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
 
   resources :books do
-    resources :reflections
+    resources :reflections, only: [:new, :show]
   end
 
   resources :users
