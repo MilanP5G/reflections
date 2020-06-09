@@ -18,23 +18,11 @@
     <div class="home-div">
 
 
+      <%= @reflection.reflection_book.title %>
 
-      <%= @book.title %>
-      <br>
-      <%= @book.author %>
-      <br>
-      <img src="<%=(url_for(@book.image))%>">
-      <br>
-      </br>
-      <%= @reflection.title %>
-      <br>
-      <br>
-      <%= @reflection.content %>
-      <br>
-      <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(@reflection) %></button>
+      <%= @reflection.reflection_book.author %>
 
-
-
+      <%= render "form" %>
 
         </div>
 
