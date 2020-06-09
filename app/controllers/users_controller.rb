@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   def destroy
    if current_user.id == @user.id
       @user.destroy
-      redirect_to root_path
+      render :home
    end
  end
 
