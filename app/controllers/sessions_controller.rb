@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
       u.email = auth['info']['email']
       u.password = "password"
     end
-      if @user.save
+      if @user.save || @user.id
         session[:user_id] = @user.id
         redirect_to user_path(@user)
       else

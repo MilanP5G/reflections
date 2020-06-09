@@ -41,6 +41,8 @@ body {
   padding-top: 7px;
   padding-bottom: 20px;
   letter-spacing: 0.5px;
+  position: relative;
+  
 }
 .login-button {
   outline: none;

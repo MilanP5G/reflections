@@ -27,6 +27,8 @@
       </div>
         <% if @book.owner_user == current_user %>
           <button class="ebbutton"><%= link_to "Edit Book", edit_book_path(@book) %></button>
+          <br>
+          <button type="dbbutton"><%= link_to "Delete Book", book_path(@book), method: :delete %></button>
         <% end %>
       <% end %>
       <br>

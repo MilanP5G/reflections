@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
   </head>
   <body>
     <div class="header">
@@ -18,10 +18,13 @@
 
 
            <% @users.each do | user | %>
+           <div class="index-user">
              <%= link_to user.username, user_path(user) %>
-             <% user.owned_books.each do | b | %>
+             <% user.owned_books.limit(3).each do | b | %>
              <br>
                <%= b.title %>
+               <br>
+            </div>
                <% end %>
            <% end %>
 
