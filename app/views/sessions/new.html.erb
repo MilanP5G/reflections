@@ -16,12 +16,13 @@
     </style>
     <div class="login-div">
       <a href="/">
-        <img class="logo" border="0"  src="/assets/Reflections_Logo.png" width="250" height="250">
+        <img class="logo" border="0"  src="/assets/Reflections_Logo.png">
       </a>
     <div class="title">LOGIN</div>
     <div class="fields">
 
       <%= form_tag "/login", method: :post do |f| %>
+
 
       <div class="input">
       <div class="username"><svg class="svg-icon" fill="#999" viewBox="0 0 20 20">
@@ -35,9 +36,16 @@
     						</svg><%= password_field_tag :password, nil, placeholder: "Password" %></div></div>
 
 
-          <button class="signin-button"><%= submit_tag "Log In" %></button>
+          <button class="signin-button"><%= submit_tag "Log In", class: "logn-button"%></button>
+          <br>
+          </br>
 
-          <button class="fb-signin-button"><%= link_to('Log in with Facebook', '/auth/facebook') %></button>
+
+          <a href="/auth/facebook">
+            <button class="facebook-button">
+              <span>Log in with Facebook</span>
+             </button>
+          </a>
 
       <% end %>
 

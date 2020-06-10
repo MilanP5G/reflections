@@ -33,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @books = @user.owned_books
   end
 
@@ -56,7 +57,8 @@ class UsersController < ApplicationController
   def destroy
    if current_user.id == @user.id
       @user.destroy
-      render :home
+      session.delete :user_id
+      redirect_to root_path
    end
  end
 

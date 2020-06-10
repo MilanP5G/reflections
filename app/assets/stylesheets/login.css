@@ -17,7 +17,6 @@ body {
 .logo {
   display: block;
   position: relative;
-  top: -40px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,13 +34,11 @@ body {
   font-size: 15px;
   letter-spacing: 3px;
   position: relative;
-  top: -50px;
 }
 .fields {
   width: 100%;
   padding: 10px 5px 5px 5px;
   position: relative;
-  top: -50px;
 }
 .fields input {
   border: none;
@@ -82,6 +79,30 @@ body {
   background: #fd711a
 }
 .signin-button:active {
+  background: #cf5d16
+}
+.facebook-button {
+  outline: none;
+  border :none;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #3b5998;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+.facebook-button:hover {
+  background: #ccdbe0
+}
+.facebook-button:active {
   background: #cf5d16
 }
 .link {

@@ -32,16 +32,18 @@
         <% end %>
       <% end %>
       <br>
+      </br>
 
       <% @book.reflections.each do | r | %>
         <%= r.title %>
         <br>
         <%= r.content %>
         <br>
-        <br>
       <% end %>
-      <br>
       <% if @book.owner_user == current_user %>
+        <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(@book.reflections) %></button>
+        <br>
+        <br>
         <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(@book) %></button>
       <% end %>
 

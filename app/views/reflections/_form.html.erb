@@ -11,10 +11,11 @@
   <% end %>
 
   <%= f.label :title, "Reflection Title:" %>
+  <br>
   <%= f.text_field :title %>
-
-  <%= f.label :content, placeholder: "Free your reflection here..." %>
-  <%= f.text_area :content %>
+  <br>
+  <br>
+  <%= f.text_area :content, placeholder: "Free your reflection here..." %>
 
   <%= f.submit "Reflect" %>
 

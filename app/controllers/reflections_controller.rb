@@ -23,7 +23,6 @@ class ReflectionsController < ApplicationController
   end
 
   def show
-    # @reflection = Reflection.find(params[:id])
     @book = @reflection.reflection_book
   end
 

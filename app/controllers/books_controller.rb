@@ -11,7 +11,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    @book.owner_user == current_user
+    @book.owner_user = current_user
     if @book.save
       redirect_to book_path(@book)
     else
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   end
 
   def update
-      if @book.update_attributes(user_params)
+      if @book.update_attributes(book_params)
        redirect_to book_path(@book)
       else
        render :edit
