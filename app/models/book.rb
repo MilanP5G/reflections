@@ -5,7 +5,7 @@ class Book < ActiveRecord::Base
   belongs_to :owner_user, class_name: "User", optional: true
 
   validates :title, presence: { message: "You must enter a book title." }
-  validates :author, presence: { message: "You must enter the author's name of a book." }
+  validates :author, presence: { message: "You must enter the author's name of the book." }
   validates :image, presence: { message: "Please upload an image of the book cover." }
 
   accepts_nested_attributes_for :reflections
