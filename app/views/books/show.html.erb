@@ -31,23 +31,30 @@
           <button type="dbbutton"><%= link_to "Delete Book", book_path(@book), method: :delete %></button>
         <% end %>
       <% end %>
+      </div>
       <br>
       </br>
-
+    <div class="reflections" style="float:right; width:500px; height:500px; overflow:auto;">
       <% @book.reflections.each do | r | %>
-        <%= r.title %>
+        <div class="book-title" style = "text-transform:uppercase;">
+          <%= r.title %>
+        </div>
+        <br>
         <br>
         <%= r.content %>
         <br>
+        <% if @book.owner_user == current_user %>
+          <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(r) %></button>
+          <button type="drbutton"><%= link_to "Delete Reflection", reflection_path(r), method: :delete %></button>
+        <% end %>
+        <br>
+        <br>
       <% end %>
       <% if @book.owner_user == current_user %>
-        <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(@book.reflections) %></button>
-        <br>
-        <br>
         <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(@book) %></button>
       <% end %>
 
-        </div>
+          </div>
 
       </body>
     </html>

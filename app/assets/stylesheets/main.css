@@ -17,6 +17,7 @@ body {
 .logo-main {
   display: block;
   position: relative;
+  top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -42,7 +43,7 @@ body {
   padding-bottom: 20px;
   letter-spacing: 0.5px;
   position: relative;
-  
+
 }
 .login-button {
   outline: none;

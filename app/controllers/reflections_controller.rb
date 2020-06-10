@@ -28,7 +28,7 @@ class ReflectionsController < ApplicationController
 
   def edit
     if current_user == @reflection.reflection_user
-      @reflection
+      @reflection.reflection_book
     else
       redirect_to book_reflection_path(@reflection.reflection_book, @reflection)
     end
@@ -42,6 +42,13 @@ class ReflectionsController < ApplicationController
       end
   end
 
+  def destroy
+   if current_user == @reflection.reflection_user
+      @reflection.destroy
+      redirect_to user_path(@reflection.reflection_user)
+   end
+ end
+
   private
 
   def set_reflection
@@ -49,7 +56,7 @@ class ReflectionsController < ApplicationController
   end
 
   def reflection_params
-    params.require(:reflection).permit(:title, :content, :reflection_book_id)
+    params.require(:reflection).permit(:title, :content, :reflection_book_id, :reflection_user_id)
   end
 
 end

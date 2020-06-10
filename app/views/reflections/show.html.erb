@@ -19,7 +19,7 @@
 
 
 
-      <%= @book.title %>
+      <%= link_to @book.title, book_path(@book) %>
       <br>
       <%= @book.author %>
       <br>
@@ -31,9 +31,10 @@
       <br>
       <%= @reflection.content %>
       <br>
-      <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(@reflection) %></button>
-
-
+      <% if @book.owner_user == current_user %>
+        <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(@reflection) %></button>
+        <button type="drbutton"><%= link_to "Delete Reflection", reflection_path(@reflection), method: :delete %></button>
+      <% end %>
 
 
         </div>
