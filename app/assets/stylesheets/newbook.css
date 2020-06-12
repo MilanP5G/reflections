@@ -136,7 +136,7 @@ textarea {
 }
 .create-book-button input {
   position: relative;
-  top: -3px;
+  top: -5px;
   font-size: 20px;
   font-weight: 700;
   font-family: 'Lato', sans-serif;

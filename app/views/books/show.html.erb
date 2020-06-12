@@ -27,7 +27,7 @@
         <img src="<%=(url_for(@book.image))%>">
       </div>
         <% if @book.owner_user == current_user %>
-          <%= button_to "Edit Book", edit_book_path(@book), class: "eb-button" %>
+          <%= button_to "Edit Book", edit_book_path(@book), method: :get, class: "eb-button" %>
           <%= button_to "Delete Book", book_path(@book), method: :delete, class: "db-button" %>
         <% end %>
       <% end %>
