@@ -15,7 +15,7 @@
         <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
       </div>
     </div>
-  
+
     <div class="home-div">
 
       <%= @book.title %>
@@ -27,13 +27,8 @@
         <img src="<%=(url_for(@book.image))%>">
       </div>
         <% if @book.owner_user == current_user %>
-          <button class="ebbutton"><%= link_to "Edit Book", edit_book_path(@book) %></button>
-          <br>
-          <button type="dbbutton"><%= link_to "Delete Book", book_path(@book), method: :delete %></button>
-          <br>
-          <% if @book.owner_user == current_user %>
-            <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(@book) %></button>
-          <% end %>
+          <%= button_to "Edit Book", edit_book_path(@book), class: "eb-button" %>
+          <%= button_to "Delete Book", book_path(@book), method: :delete, class: "db-button" %>
         <% end %>
       <% end %>
       </div>
@@ -59,6 +54,11 @@
         <br>
         </br>
       <% end %>
+      <div class="wr-button-div">
+      <% if @book.owner_user == current_user %>
+        <%= button_to "Write a reflection", new_book_reflection_path(@book), method: :get, class: "wr-button" %>
+      <% end %>
+      </div>
 
 
           </div>

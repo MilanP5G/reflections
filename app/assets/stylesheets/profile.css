@@ -112,23 +112,24 @@ img {
 }
 .card-text {
   grid-area: text;
-  /* margin: 25px; */
   background-color: #ecf0f3;
   margin-top: 120px;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
+  text-align: center;
+  padding: 10px;
 }
 .card-text .date {
   color: #cf5d16;
   font-size:13px;
 }
 .card-text p {
-  color: grey;
-  font-size:15px;
-  font-weight: 300;
+  color: #555;
+  font-size-adjust: auto;
 }
 .card-text h2 {
   font-size-adjust: auto;
+  color: #cf5d16;
 }
 .card-stats {
   grid-area: stats;
@@ -148,4 +149,7 @@ img {
 .card:hover {
   transform: scale(1.15);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+a {
+  text-decoration: none;
 }

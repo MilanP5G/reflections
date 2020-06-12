@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/newreflection.css">
   </head>
   <body>
     <div class="header">
-      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "ADD BOOK", new_book_path %>
@@ -16,7 +16,6 @@
       </div>
     </div>
     <div class="home-div">
-
 
 
       <%= @book.title %>

@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "ADD BOOK", new_book_path %>
@@ -17,19 +17,35 @@
     </div>
     <div class="home-div">
 
+      <div class="ayb">EDIT YOUR BOOK</div>
+
+      <div class="nb-errors">
+      <% if @book.errors.any? %>
+        <% @book.errors.messages.values.each do | msg | %>
+           <% msg.each do | m | %>
+             <%= m %>
+           <br>
+           <% end %>
+        <% end %>
+      <% end %>
+      </div>
+
 
       <%= form_for @book do | f | %>
 
-        <%= f.label :title, "Book Title:" %>
+       <div class="book-input">
         <%= f.text_field :title %>
 
-        <%= f.label :author, "Book Author:" %>
         <%= f.text_field :author %>
+        </div>
+        <br>
+        </br>
+        <div class="upload-button"><%= f.file_field :image %></div>
+        <br>
+        <br>
+        </br>
 
-        <%= f.label :image, "Upload Book Cover:" %>
-        <%= f.file_field :image %>
-
-       <%= f.submit "Update Book" %>
+       <button class="create-book-button"><%= f.submit "Update Book" %></button>
 
       <% end %>
 

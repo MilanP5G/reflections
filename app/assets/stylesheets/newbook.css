@@ -154,3 +154,10 @@ textarea {
   color: red;
   margin: center;
 }
+.ayb {
+  text-align: center;
+  font-size: 35px;
+  padding-top: 1px;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+}

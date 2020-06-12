@@ -161,7 +161,7 @@ body {
   border: none;
   cursor: pointer;
   width: 70%;
-  height: 60px;
+  height: 45px;
   border-radius: 30px;
   font-size: 17px;
   font-weight: 700;
@@ -189,7 +189,7 @@ body {
   border: none;
   cursor: pointer;
   width: 70%;
-  height: 60px;
+  height: 45px;
   border-radius: 30px;
   font-size: 17px;
   font-weight: 700;
@@ -211,4 +211,87 @@ body {
 }
 .bsb-buttons {
   margin-left: 110px;
+}
+.eb-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  height: 40px;
+  margin-left: 45px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cf5d16;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  background-color: #ecf0f3;
+  color: #cf5d16;
+  border: 2px solid #cf5d16;
+  position: relative;
+  top: 5px;
+}
+.eb-button:hover {
+  background: #ffad7a
+}
+.eb-button:active {
+  background: #36486b
+}
+.db-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  height: 40px;
+  margin-left: 45px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cc1306;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  position: relative;
+  top: 13px;
+}
+.db-button:hover {
+  background: #ff4033
+}
+.db-button:active {
+  background: #cc1306
+}
+.wr-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  margin-left: 120px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cf5d16;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+.wr-button:hover {
+  background: #fd711a
+}
+.wr-button:active {
+  background: #36486b
+}
+.wr-button-div {
+  position: absolute;
+  top: 720px;
 }

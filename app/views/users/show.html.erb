@@ -24,26 +24,29 @@
     <div class="profile-container">
 
     <% @books.each do | book | %>
-    <div class="link-to"><%= link_to book_path(book) do %>
+    <div class="link-to" id="htitle"><%= link_to book_path(book) do %>
       <div class="card">
         <div class="card-image"><img src="<%=(url_for(book.image))%>"></div>
           <div class="card-text">
            <span class="date"></span>
              <h2><%= book.title %></h2>
                <% book.reflections.limit(1).each do | r |%>
-               <%= r.title %>
+               <br>
+               <p><%= r.title %></p>
                 <br>
+                <% end %>
              </div>
             <div class="card-stats">
                <div class="stat">
                  <div class="value"><p> <%= book.created_at.strftime("%d %B %Y") %> </p></div>
               </div>
-        </div>
-        <% end %>
+           </div>
       </div>
+      <% end %>
     </div>
-  <% end %>
-<% end %>
+    <% end %>
+
+
 
 
 </div>
