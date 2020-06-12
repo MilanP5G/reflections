@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "ADD BOOK", new_book_path %>
@@ -17,11 +17,14 @@
     </div>
     <div class="home-div">
 
-      <%= link_to "Log out", logout_path, method: :delete %>
-
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-
-      <%= link_to "Delete Account", user_path(current_user), method: :delete %>
+      <div class="settings-name"><%= @user.username %></div>
+      <br></br>
+      <br></br>
+      <%= button_to("Log out", logout_path, method: :delete, class: "logout-button") %>
+      <br></br>
+      <%= button_to("Edit Profile", edit_user_path(@user), method: :get, class: "ep-button") %>
+      <br></br>
+      <%= button_to("Delete Account", user_path(current_user), method: :delete, class: "da-button") %>
 
 
         </div>

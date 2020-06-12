@@ -22,8 +22,17 @@
     <div class="title">LOGIN</div>
     <div class="fields">
 
-      <%= form_tag "/login", method: :post do |f| %>
+      <% if @user && @user.errors.any? %>
+        <% @user.errors.messages.values.each do | msg | %>
+           <% msg.each do | m | %>
+             <%= m %>
+           <br>
+           <% end %>
+        <% end %>
+      <% end %>
+  
 
+      <%= form_for "/login", method: :post do |f| %>
 
       <div class="input">
       <div class="username"><svg class="svg-icon" fill="#999" viewBox="0 0 20 20">

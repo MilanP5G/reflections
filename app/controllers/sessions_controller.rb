@@ -11,10 +11,12 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect_to users_path
+          return
+       else
+         @user.errors.add(:password, "Invalid password!")
        end
-    else
-      render :new
     end
+    render :new
   end
 
   def facebook_callback

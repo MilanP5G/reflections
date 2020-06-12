@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "ADD BOOK", new_book_path %>
@@ -15,6 +15,7 @@
         <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
       </div>
     </div>
+  
     <div class="home-div">
 
       <%= @book.title %>
@@ -29,6 +30,10 @@
           <button class="ebbutton"><%= link_to "Edit Book", edit_book_path(@book) %></button>
           <br>
           <button type="dbbutton"><%= link_to "Delete Book", book_path(@book), method: :delete %></button>
+          <br>
+          <% if @book.owner_user == current_user %>
+            <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(@book) %></button>
+          <% end %>
         <% end %>
       <% end %>
       </div>
@@ -44,15 +49,17 @@
         <%= r.content %>
         <br>
         <% if @book.owner_user == current_user %>
-          <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(r) %></button>
-          <button type="drbutton"><%= link_to "Delete Reflection", reflection_path(r), method: :delete %></button>
+        <div class="bsb-buttons">
+          <%= button_to "Edit Reflection", edit_reflection_path(r), method: :get, class: "bre-button" %>
+          <%= button_to "Delete Reflection", reflection_path(r), method: :delete, class: "brd-button" %>
+        </div>
         <% end %>
         <br>
+        </br>
         <br>
+        </br>
       <% end %>
-      <% if @book.owner_user == current_user %>
-        <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(@book) %></button>
-      <% end %>
+
 
           </div>
 

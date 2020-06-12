@@ -5,5 +5,5 @@ class Reflection < ActiveRecord::Base
   validates :title, presence: { message: "Don't be afraid to add an eye-catching title." }
   validates :content, presence: { message: "Don't be afraid to write a reflection. (1000 characters max)" }, length: { maximum: 1000, message: "Express yourself within 1000 characters."}
 
-
+  
 end

@@ -8,6 +8,7 @@ class Book < ActiveRecord::Base
   validates :author, presence: { message: "You must enter the author's name of the book." }
   validates :image, presence: { message: "Please upload an image of the book cover." }
 
+
   accepts_nested_attributes_for :reflections
 
 

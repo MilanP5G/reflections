@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "ADD BOOK", new_book_path %>
@@ -19,16 +19,16 @@
 
            <% @users.each do | user | %>
            <div class="index-user">
-             <% if user.reflections != nil %>
              <%= link_to user.username, user_path(user) %>
-             <% user.owned_books.limit(3).each do | b | %>
+             <% user.owned_books.each do | b | %>
              <br>
-               <%= b.title %>
+                <%= b.title %>
+               <% end %>
                <br>
             </div>
-              <% end %>
+
                <% end %>
-           <% end %>
+
 
 
 

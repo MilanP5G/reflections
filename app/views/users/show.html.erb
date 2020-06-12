@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
       <div class="header-right">
         <%= link_to "HOME", users_path %>
         <%= link_to "ADD BOOK", new_book_path %>
@@ -15,27 +15,41 @@
         <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
       </div>
     </div>
-    <div class="home-div">
+    <!-- <div class="profile-div"> -->
 
-      <h1><%= @user.username %></h1>
-      <br>
-      <div class="userbooks">
-      <% @books.each do | book | %>
-      <br>
-        <%= link_to book.title, book_path(book) %>
-        <br>
-        <%= book.author %>
-        <br>
-        <img src="<%=(url_for(book.image))%>">
-        <br>
-        <br>
-        <% if book.owner_user == current_user %>
-          <button class="nrbutton"><%= link_to "Write a reflection", new_book_reflection_path(book) %></button>
-        <% end %>
-      <% end %>
-      </div>
+    <div class="profile-un"><%= @user.username %></div>
+    <br>
 
+
+    <div class="profile-container">
+
+    <% @books.each do | book | %>
+    <div class="link-to"><%= link_to book_path(book) do %>
+      <div class="card">
+        <div class="card-image"><img src="<%=(url_for(book.image))%>"></div>
+          <div class="card-text">
+           <span class="date"></span>
+             <h2><%= book.title %></h2>
+               <% book.reflections.limit(1).each do | r |%>
+               <%= r.title %>
+                <br>
+             </div>
+            <div class="card-stats">
+               <div class="stat">
+                 <div class="value"><p> <%= book.created_at.strftime("%d %B %Y") %> </p></div>
+              </div>
         </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
+</div>
+
+
+        <!-- </div> -->
 
       </body>
     </html>

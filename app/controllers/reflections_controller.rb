@@ -23,7 +23,11 @@ class ReflectionsController < ApplicationController
   end
 
   def show
-    @book = @reflection.reflection_book
+    if current_user == @reflection.reflection_user
+      @book = @reflection.reflection_book
+    else
+      redirect_to book_path(@reflection.reflection_book)
+    end
   end
 
   def edit

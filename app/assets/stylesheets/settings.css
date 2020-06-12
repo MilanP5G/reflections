@@ -1,0 +1,86 @@
+.banner-logo img {
+  display: inline-block;
+  width: 180px;
+  margin: center;
+  float: left;
+  position: relative;
+  left: -20px;
+}
+.settings-name {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  }
+  .logout-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 500px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cf5d16;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  background-color: #ecf0f3;
+  color: #cf5d16;
+  border: 2px solid #cf5d16;
+}
+.logout-button:hover {
+  background: #ffad7a
+}
+.logout-button:active {
+  background: #36486b
+}
+.ep-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 500px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cf5d16;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+.ep-button:hover {
+  background: #fd711a
+}
+.ep-button:active {
+  background: #36486b
+}
+.da-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 500px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cc1306;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+.da-button:hover {
+  background: #ff4033
+}
+.da-button:active {
+  background: #cc1306
+}

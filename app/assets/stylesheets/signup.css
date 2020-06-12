@@ -98,3 +98,13 @@ body {
   color: #aaa;
   font-size: 15px;
 }
+.signup-errors {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: red;
+  margin: center;
+  position: relative;
+  left: -90px;
+}

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create, :home]
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :edit, :settings, :destroy]
 
   def home
     if session[:user_id]
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.with_reflections
-    @user = User.find_by(id: params[:id])
   end
 
 
@@ -33,7 +32,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @books = @user.owned_books
   end
 

@@ -7,9 +7,14 @@ class User < ActiveRecord::Base
   validates :email, presence: { message: "You must enter a valid email."}, uniqueness: { message: "This email has already been taken. Please try another."}
   validates :password, presence: { message: "You must enter a password."}, length: { :within => 8..40, message: "Your password must be a minimum of 8 characters." }
 
-  scope :with_reflections, ->{ joins(:reflections).where("reflection_book_id >= ?", 1).order("created_at DESC") }
+  scope :with_reflections, ->{ joins(:reflections).order("created_at DESC") }
+
+
 
   has_secure_password validations: false
+
+
+
 
 
 
