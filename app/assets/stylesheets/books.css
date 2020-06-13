@@ -62,7 +62,7 @@ body {
   }
 }
 .home-div {
-  margin-top: 120px;
+  margin-top: 100px;
 }
 .reflections {
   margin-top: 90px;
@@ -233,7 +233,7 @@ body {
   color: #cf5d16;
   border: 2px solid #cf5d16;
   position: relative;
-  top: 5px;
+  top: 10px;
 }
 .eb-button:hover {
   background: #ffad7a
@@ -259,7 +259,7 @@ body {
              -3px -3px 8px #ffffff;
   transition: 0.5s;
   position: relative;
-  top: 13px;
+  top: 18px;
 }
 .db-button:hover {
   background: #ff4033
@@ -294,4 +294,11 @@ body {
 .wr-button-div {
   position: absolute;
   top: 720px;
+}
+.btac {
+  text-align: center;
+  font-size: 20px;
+}
+.bauthor {
+  padding-bottom: 10px;
 }

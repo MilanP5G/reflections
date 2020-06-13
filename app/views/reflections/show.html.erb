@@ -15,29 +15,38 @@
         <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
       </div>
     </div>
+
     <div class="home-div">
+     <div class="btac"><%= link_to book_path(@book) do %>
+      <div class="btrsp">
+      <%= @book.title %>
+        <br>
+         <%= @book.author %>
+      </div>
+         <br>
+          <img src="<%=(url_for(@book.image))%>">
+          <% end %>
+         <br>
+        </br>
+       </div>
+    </div>
 
 
 
-      <%= link_to @book.title, book_path(@book) %>
-      <br>
-      <%= @book.author %>
-      <br>
-      <img src="<%=(url_for(@book.image))%>">
-      <br>
-      </br>
+      <div class="reflections-show" style="float:right; width:500px; height:500px; overflow:auto;">
       <%= @reflection.title %>
       <br>
       <br>
       <%= @reflection.content %>
       <br>
       <% if @book.owner_user == current_user %>
-        <button class="erbutton"><%= link_to "Edit Reflection", edit_reflection_path(@reflection) %></button>
-        <button type="drbutton"><%= link_to "Delete Reflection", reflection_path(@reflection), method: :delete %></button>
+      <%= button_to "Edit Reflection", edit_reflection_path(@reflection), method: :get, class: "bre-button" %>
+      <%= button_to "Delete Reflection", reflection_path(@reflection), method: :delete, class: "brd-button" %>
       <% end %>
 
 
         </div>
+
 
       </body>
     </html>

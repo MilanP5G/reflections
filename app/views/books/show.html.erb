@@ -17,14 +17,14 @@
     </div>
 
     <div class="home-div">
-
+     <div class="btac">
       <%= @book.title %>
       <br>
-      <%= @book.author %>
-      <br>
+      <div class="bauthor"><%= @book.author %></div>
       <% if @book.image.attached? %>
       <div class="bookcover">
         <img src="<%=(url_for(@book.image))%>">
+      </div>
       </div>
         <% if @book.owner_user == current_user %>
           <%= button_to "Edit Book", edit_book_path(@book), method: :get, class: "eb-button" %>

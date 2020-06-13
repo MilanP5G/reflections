@@ -16,18 +16,22 @@
       </div>
     </div>
 
-
-           <% @users.each do | user | %>
-           <div class="index-user">
-             <%= link_to user.username, user_path(user) %>
-             <% user.owned_books.each do | b | %>
+    <div class="scrolling-wrapper">
+      <% @users.each do | user | %>
+        <div class="index-page"><%= link_to user_path(user) do %>
+          <div class="card-home">
+            <div class="text">
+           <h1><%= user.username %></h1>
+            <% user.owned_books.each do | b | %>
              <br>
-                <%= b.title %>
-               <% end %>
-               <br>
-            </div>
-
-               <% end %>
+              <p><%= b.title %></p>
+              <% end %>
+              </div>
+             </div>
+            <% end %>
+           </div>
+          <% end %>
+        </div>
 
 
 

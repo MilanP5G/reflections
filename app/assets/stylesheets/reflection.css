@@ -1,0 +1,63 @@
+.bre-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  height: 45px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cf5d16;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  background-color: #ecf0f3;
+  color: #cf5d16;
+  border: 2px solid #cf5d16;
+  position: relative;
+  top: 10px;
+}
+.bre-button:hover {
+  background: #ffad7a
+}
+.bre-button:active {
+  background: #36486b
+}
+.brd-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  height: 45px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #cc1306;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  position: relative;
+  top: 20px;
+}
+.brd-button:hover {
+  background: #ff4033
+}
+.brd-button:active {
+  background: #cc1306
+}
+.reflections-show {
+  margin-top: 150px;
+  margin-left: 110px;
+}
+a {
+  text-decoration: none;
+}
+.btrsp {
+  color: #555; 
+}
