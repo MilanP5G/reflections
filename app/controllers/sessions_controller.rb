@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class SessionsController < ApplicationController
   before_action :require_login, only: [:destroy]
 
@@ -20,9 +22,10 @@ class SessionsController < ApplicationController
   end
 
   def facebook_callback
+    secure_password = SecureRandom.hex(16)
     @user = User.find_or_create_by(username: auth['info']['name']) do | u |
       u.email = auth['info']['email']
-      u.password = "password"
+      u.password = secure_password
     end
       if @user.save || @user.id
         session[:user_id] = @user.id

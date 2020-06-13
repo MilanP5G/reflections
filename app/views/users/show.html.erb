@@ -6,54 +6,35 @@
     <link rel="stylesheet" href="/stylesheets/profile.css">
   </head>
   <body>
-    <div class="header">
-      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
-      <div class="header-right">
-        <%= link_to "HOME", users_path %>
-        <%= link_to "ADD BOOK", new_book_path %>
-        <%= link_to "PROFILE", user_path(current_user.id) %>
-        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
-      </div>
-    </div>
-    <!-- <div class="profile-div"> -->
+    <%= render "banner" %>
 
     <div class="profile-un"><%= @user.username %></div>
     <br>
 
-
-    <div class="profile-container">
-
-    <% @books.each do | book | %>
-    <div class="link-to" id="htitle"><%= link_to book_path(book) do %>
-      <div class="card">
-        <div class="card-image"><img src="<%=(url_for(book.image))%>"></div>
-          <div class="card-text">
-           <span class="date"></span>
-             <h2><%= book.title %></h2>
-               <% book.reflections.limit(1).each do | r |%>
-               <br>
-               <p><%= r.title %></p>
-                <br>
-                <% end %>
-             </div>
-            <div class="card-stats">
-               <div class="stat">
-                 <div class="value"><p> <%= book.created_at.strftime("%d %B %Y") %> </p></div>
-              </div>
+       <div class="profile-container">
+        <% @books.each do | book | %>
+          <div class="link-to" id="htitle"><%= link_to book_path(book) do %>
+             <div class="card">
+              <div class="card-image"><img src="<%=(url_for(book.image))%>"></div>
+                <div class="card-text">
+                  <span class="date"></span>
+                  <h2><%= book.title %></h2>
+                  <% book.reflections.limit(1).each do | r |%>
+                  <br>
+                  <p><%= r.title %></p>
+                  <br>
+                 <% end %>
+                </div>
+               <div class="card-stats">
+              <div class="stat">
+             <div class="value"><p> <%= created(book) %> </p></div>
+            </div>
            </div>
+         </div>
+       <% end %>
       </div>
-      <% end %>
-    </div>
     <% end %>
+   </div>
 
-
-
-
-
-</div>
-
-
-        <!-- </div> -->
-
-      </body>
-    </html>
+  </body>
+</html>

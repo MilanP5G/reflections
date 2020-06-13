@@ -59,5 +59,8 @@ a {
   text-decoration: none;
 }
 .btrsp {
-  color: #555; 
+  color: #555;
+}
+.rshow-button {
+  margin-left: 120px;
 }

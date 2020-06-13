@@ -6,15 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/books.css">
   </head>
   <body>
-    <div class="header">
-      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
-      <div class="header-right">
-        <%= link_to "HOME", users_path %>
-        <%= link_to "ADD BOOK", new_book_path %>
-        <%= link_to "PROFILE", user_path(current_user.id) %>
-        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
-      </div>
-    </div>
+    <%= render "users/banner" %>
 
     <div class="home-div">
      <div class="btac">
@@ -43,12 +35,9 @@
         <br>
         <%= r.content %>
         <br>
-        <% if @book.owner_user == current_user %>
         <div class="bsb-buttons">
-          <%= button_to "Edit Reflection", edit_reflection_path(r), method: :get, class: "bre-button" %>
-          <%= button_to "Delete Reflection", reflection_path(r), method: :delete, class: "brd-button" %>
+          <%= render partial: "layouts/edit_delete_reflections", locals: { object: @book, obj: r } %>
         </div>
-        <% end %>
         <br>
         </br>
         <br>

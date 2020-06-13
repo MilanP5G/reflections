@@ -6,15 +6,8 @@
     <link rel="stylesheet" href="/stylesheets/books.css">
   </head>
   <body>
-    <div class="header">
-      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
-      <div class="header-right">
-        <%= link_to "HOME", users_path %>
-        <%= link_to "ADD BOOK", new_book_path %>
-        <%= link_to "PROFILE", user_path(current_user.id) %>
-        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
-      </div>
-    </div>
+    <%= render "banner" %>
+    
     <div class="home-div">
 
       <div class="settings-name"><%= @user.username %></div>

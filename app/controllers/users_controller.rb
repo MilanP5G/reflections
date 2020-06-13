@@ -36,20 +36,21 @@ class UsersController < ApplicationController
   end
 
   def settings
-
+    access_self
   end
 
   def edit
-    @user = current_user
+    access_self
   end
 
   def update
-    @user = current_user
+    if @user = current_user
       if @user.update_attributes(user_params)
        redirect_to account_settings_path(@user.id)
       else
        render :edit
       end
+    end
   end
 
   def destroy
@@ -64,6 +65,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def access_self
+    if @user = current_user
+      @user
+    end
   end
 
   def user_params

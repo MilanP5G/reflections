@@ -1,0 +1,8 @@
+<% if object.errors.any? %>
+  <% object.errors.messages.values.each do | msg | %>
+     <% msg.each do | m | %>
+       <%= m %>
+     <br>
+     <% end %>
+  <% end %>
+<% end %>

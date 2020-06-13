@@ -93,9 +93,6 @@ body {
   margin: auto;
   padding: 25px 5px 5px 5px;
 }
-.book-input {
-  width: 505px
-}
 .book-input input {
   width: 505px;
   border: none;
@@ -120,7 +117,7 @@ body {
   outline: none;
   border :none;
   cursor: pointer;
-  width: 100%;
+  width: 505px;
   height: 60px;
   margin-top: 20px;
   border-radius: 30px;
@@ -180,4 +177,7 @@ textarea {
 .rn-bta {
   text-align: center;
   font-size: 30px;
+}
+.nr-form {
+  margin-left: 35px;
 }

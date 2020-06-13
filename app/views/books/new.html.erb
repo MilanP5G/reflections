@@ -6,50 +6,17 @@
     <link rel="stylesheet" href="/stylesheets/newbook.css">
   </head>
   <body>
-    <div class="header">
-      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
-      <div class="header-right">
-        <%= link_to "HOME", users_path %>
-        <%= link_to "ADD BOOK", new_book_path %>
-        <%= link_to "PROFILE", user_path(current_user.id) %>
-        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
-      </div>
-    </div>
-    <br>
-
+    <%= render "users/banner" %>
+    
     <div class="home-div">
 
       <div class="ayb">ADD YOUR BOOK</div>
 
-      <%= form_for @book do | f | %>
-
       <div class="nb-errors">
-      <% if @book.errors.any? %>
-        <% @book.errors.messages.values.each do | msg | %>
-           <% msg.each do | m | %>
-             <%= m %>
-           <br>
-           <% end %>
-        <% end %>
-      <% end %>
+       <%= render partial: "layouts/form_errors", locals: { object: @book } %>
       </div>
 
-      <div class="book-input">
-        <%= f.text_field :title, placeholder: "Book Title:" %>
-        <br>
-        </br>
-        <%= f.text_field :author, placeholder: "Book Author:" %>
-        </div>
-        <br>
-        </br>
-        <div class="upload-button"><%= f.file_field :image %></div>
-        <br>
-        <br>
-        </br>
-
-       <button class="create-book-button"><%= f.submit "Create Book" %></button>
-
-      <% end %>
+      <%= render partial: "layouts/book_form", locals: { text: "Create Book" } %>
 
         </div>
 

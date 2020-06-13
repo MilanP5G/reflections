@@ -1,17 +1,9 @@
 <%= form_for @reflection do | f | %>
   <%= f.hidden_field :reflection_book_id %>
 
-<div class="nb-errors">
-  <% if @reflection.errors.any? %>
-    <% @reflection.errors.messages.values.each do | msg | %>
-       <% msg.each do | m | %>
-         <%= m %>
-       <br>
-       <% end %>
-    <% end %>
-  <% end %>
-
-</div>
+  <div class="nb-errors">
+    <%= render partial: "layouts/form_errors", locals: { object: @reflection } %>
+  </div>
 
  <div class="book-input">
   <%= f.text_field :title, placeholder: "Reflection Title:" %>

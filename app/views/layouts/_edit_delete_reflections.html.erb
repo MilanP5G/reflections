@@ -1,0 +1,4 @@
+<% if object.owner_user == current_user %>
+  <%= button_to "Edit Reflection", edit_reflection_path(obj), method: :get, class: "bre-button" %>
+  <%= button_to "Delete Reflection", reflection_path(obj), method: :delete, class: "brd-button" %>
+<% end %>

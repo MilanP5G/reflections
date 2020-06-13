@@ -1,0 +1,15 @@
+<%= form_for @book do | f | %>
+<div class="book-input">
+  <%= f.text_field :title, placeholder: "Book Title:" %>
+  <br>
+  </br>
+  <%= f.text_field :author, placeholder: "Book Author:" %>
+  </div>
+  <br>
+  </br>
+  <div class="upload-button"><%= f.file_field :image %></div>
+  <br>
+  <br>
+  </br>
+ <button class="create-book-button"><%= f.submit text %></button>
+<% end %>

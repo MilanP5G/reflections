@@ -6,15 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/profile.css">
   </head>
   <body>
-    <div class="header">
-      <div class="banner-logo"><img src="/assets/Reflections_Logo.png"></div>
-      <div class="header-right">
-        <%= link_to "HOME", users_path %>
-        <%= link_to "ADD BOOK", new_book_path %>
-        <%= link_to "PROFILE", user_path(current_user.id) %>
-        <%= link_to "ACCOUNT SETTINGS", account_settings_path(current_user.id) %>
-      </div>
-    </div>
+    <%= render "users/banner" %>
 
     <div class="home-div">
      <div class="btac"><%= link_to book_path(@book) do %>
@@ -22,7 +14,7 @@
       <%= @book.title %>
         <br>
          <%= @book.author %>
-      </div>
+        </div>
          <br>
           <img src="<%=(url_for(@book.image))%>">
           <% end %>
@@ -34,15 +26,14 @@
 
 
       <div class="reflections-show" style="float:right; width:500px; height:500px; overflow:auto;">
+      <div class="book-title" style = "text-transform:uppercase;">
       <%= @reflection.title %>
+      </div>
       <br>
       <br>
       <%= @reflection.content %>
       <br>
-      <% if @book.owner_user == current_user %>
-      <%= button_to "Edit Reflection", edit_reflection_path(@reflection), method: :get, class: "bre-button" %>
-      <%= button_to "Delete Reflection", reflection_path(@reflection), method: :delete, class: "brd-button" %>
-      <% end %>
+      <div class="rshow-button"><%= render partial: "layouts/edit_delete_reflections", locals: { object: @book, obj: @reflection } %></div>
 
 
         </div>
